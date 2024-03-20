@@ -59,3 +59,16 @@ def max_crossing_sum(a, start, mid, end):
 a = [-2, 4, -3, 2, 3, -1, 2, -4, -3, 5]
 result = max_subarray_sum(a, 0, len(a) - 1)
 print("Maximum subarray sum:", result)
+
+
+#O(n)
+tempSum = 0
+result = 0
+for i in range(len(a)):
+    tempSum = tempSum+ a[i]
+    tempSum = max(0,tempSum)#to prevent that tempSum is negative, if it is negative, then start from 0 again
+    result = max(result, tempSum)
+print(result)
+
+
+
